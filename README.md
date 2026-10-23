@@ -105,7 +105,7 @@ docker compose up -d config-server discovery-server customers-service vets-servi
 # aguarde 2 a 3 min e confira http://localhost:8761 (Eureka) e http://localhost:8080
 
 # 2. Este repositório
-git clone <URL-DESTE-REPOSITORIO>
+git clone <https://github.com/Lucasdesenvolv/tp06-petclinic-locust>
 cd tp06-petclinic-locust
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
