@@ -1,0 +1,35 @@
+[2026-10-23 02:50:23,910] Lucas-PC/INFO/locust.main: Starting Locust 2.47.0
+[2026-10-23 02:50:23,912] Lucas-PC/INFO/locust.main: Run time limit set to 420 seconds
+[2026-10-23 02:50:23,914] Lucas-PC/INFO/locust.runners: Ramping to 150 users at a rate of 5.00 per second
+[2026-10-23 02:50:53,086] Lucas-PC/INFO/locust.runners: All users spawned: {"EscritaUser": 150} (150 total users)
+[2026-10-23 02:57:23,247] Lucas-PC/INFO/locust.main: --run-time limit reached, shutting down
+[2026-10-23 02:57:23,397] Lucas-PC/INFO/locust.main: Shutting down (exit code 1)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      GET /owners                                                                     5321 4425(83.16%) |    766       1   10267      3 |   14.80       12.31
+GET      GET /owners/{id}                                                                5344 4340(81.21%) |    587       1   10380      3 |   14.87       12.07
+GET      GET /vets                                                                       5219 4074(78.06%) |      3       1      54      3 |   14.52       11.33
+POST     POST /owners                                                                   10745 8762(81.54%) |    616       1   10309     46 |   29.89       24.38
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                     26629 21601(81.12%) |    520       1   10380      6 |   74.08       60.09
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+GET      GET /owners                                                                             3      3      5    110   1800   8900  10000  10000  10000  10000  10000   5321
+GET      GET /owners/{id}                                                                        3      3      5      7    800   5700  10000  10000  10000  10000  10000   5344
+GET      GET /vets                                                                               3      3      4      4      5      7     10     12     24     54     54   5219
+POST     POST /owners                                                                           46     47     49     50    740   6200  10000  10000  10000  10000  10000  10745
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                              6     45     46     48    380   3600  10000  10000  10000  10000  10000  26629
+
+Error report
+# occurrences      Error                                                                                               
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+4340               GET GET /owners/{id}: HTTPError('405 Client Error: Method Not Allowed for url: GET /owners/{id}')   
+4425               GET GET /owners: HTTPError('405 Client Error: Method Not Allowed for url: GET /owners')             
+8762               POST POST /owners: HTTPError('503 Server Error: Service Unavailable for url: POST /owners')         
+4074               GET GET /vets: HTTPError('405 Client Error: Method Not Allowed for url: GET /vets')                 
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+
+[warmup] 60s concluidos: estatisticas zeradas

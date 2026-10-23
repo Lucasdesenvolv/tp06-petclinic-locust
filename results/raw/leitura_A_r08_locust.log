@@ -1,0 +1,26 @@
+[2026-10-23 01:22:36,844] Lucas-PC/INFO/locust.main: Starting Locust 2.47.0
+[2026-10-23 01:22:36,846] Lucas-PC/INFO/locust.main: Run time limit set to 420 seconds
+[2026-10-23 01:22:36,849] Lucas-PC/INFO/locust.runners: Ramping to 30 users at a rate of 5.00 per second
+[2026-10-23 01:22:41,898] Lucas-PC/INFO/locust.runners: All users spawned: {"LeituraUser": 30} (30 total users)
+[2026-10-23 01:29:36,131] Lucas-PC/INFO/locust.main: --run-time limit reached, shutting down
+[2026-10-23 01:29:36,235] Lucas-PC/INFO/locust.main: Shutting down (exit code 0)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      GET /owners                                                                     3202     0(0.00%) |     15       6      67     14 |    8.91        0.00
+GET      GET /owners/{id}                                                                2487     0(0.00%) |      4       2      47      5 |    6.92        0.00
+GET      GET /vets                                                                       1036     0(0.00%) |      4       3      16      4 |    2.88        0.00
+POST     POST /owners                                                                     353     0(0.00%) |     48      44      59     48 |    0.98        0.00
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                      7078     0(0.00%) |     11       2      67      8 |   19.70        0.00
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+GET      GET /owners                                                                            14     17     18     20     22     24     25     26     54     68     68   3202
+GET      GET /owners/{id}                                                                        5      5      5      5      6      7      9     11     15     47     47   2487
+GET      GET /vets                                                                               4      5      5      5      6      7      9     12     16     17     17   1036
+POST     POST /owners                                                                           48     49     50     50     52     53     54     56     59     59     59    353
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                              8     13     15     17     22     45     49     50     55     68     68   7078
+
+[warmup] 60s concluidos: estatisticas zeradas

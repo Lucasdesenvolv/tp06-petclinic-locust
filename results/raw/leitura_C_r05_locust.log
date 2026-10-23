@@ -1,0 +1,41 @@
+[2026-10-22 23:29:54,693] Lucas-PC/INFO/locust.main: Starting Locust 2.47.0
+[2026-10-22 23:29:54,695] Lucas-PC/INFO/locust.main: Run time limit set to 420 seconds
+[2026-10-22 23:29:54,697] Lucas-PC/INFO/locust.runners: Ramping to 150 users at a rate of 5.00 per second
+[2026-10-22 23:30:23,849] Lucas-PC/INFO/locust.runners: All users spawned: {"LeituraUser": 150} (150 total users)
+[2026-10-22 23:36:53,979] Lucas-PC/INFO/locust.main: --run-time limit reached, shutting down
+[2026-10-22 23:36:54,208] Lucas-PC/INFO/locust.main: Shutting down (exit code 0)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      GET /owners                                                                    12888     0(0.00%) |    493       9    5797    190 |   35.85        0.00
+GET      GET /owners/{id}                                                               10238     0(0.00%) |    316       2    4182     14 |   28.48        0.00
+GET      GET /vets                                                                       4419     0(0.00%) |      6       2     150      5 |   12.29        0.00
+POST     POST /owners                                                                    1491     0(0.00%) |    372       3    4335     57 |    4.15        0.00
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                     29036     0(0.00%) |    350       2    5797     44 |   80.77        0.00
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+GET      GET /owners                                                                           190    590    830   1000   1400   1700   1900   2300   3400   4000   5800  12888
+GET      GET /owners/{id}                                                                       14    290    510    680   1100   1300   1500   2100   3000   3900   4200  10238
+GET      GET /vets                                                                               5      6      7      7      9     11     14     16     57    150    150   4419
+POST     POST /owners                                                                           57    400    620    760   1100   1300   1600   2200   3300   4300   4300   1491
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                             44    290    560    740   1200   1500   1800   2100   3300   4200   5800  29036
+
+Traceback (most recent call last):
+  File "src/gevent/greenlet.py", line 912, in gevent._gevent_cgreenlet.Greenlet.run
+  File "C:\Users\lucas\Documents\tp06-petclinic-locust\.venv\Lib\site-packages\locust\stats.py", line 1170, in stats_writer
+    self.requests_csv_filehandle.seek(requests_csv_data_start)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: I/O operation on closed file.
+2026-10-23T02:36:54Z <Greenlet at 0x1d655513740: <bound method StatsCSVFileWriter.stats_writer of <locust.stats.StatsCSVFileWriter object at 0x000001D655528D70>>> failed with ValueError
+
+[2026-10-22 23:36:54,302] Lucas-PC/CRITICAL/locust.main: Unhandled exception in greenlet: <Greenlet at 0x1d655513740: <bound method StatsCSVFileWriter.stats_writer of <locust.stats.StatsCSVFileWriter object at 0x000001D655528D70>>>
+Traceback (most recent call last):
+  File "src/gevent/greenlet.py", line 912, in gevent._gevent_cgreenlet.Greenlet.run
+  File "C:\Users\lucas\Documents\tp06-petclinic-locust\.venv\Lib\site-packages\locust\stats.py", line 1170, in stats_writer
+    self.requests_csv_filehandle.seek(requests_csv_data_start)
+    ^^^^^^^
+ValueError: I/O operation on closed file.
+[warmup] 60s concluidos: estatisticas zeradas
