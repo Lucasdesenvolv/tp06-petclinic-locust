@@ -2,7 +2,7 @@
 
 **Aluno:** Lucas Araújo Moura · **Disciplina:** Sistemas Distribuídos · **Entrega:** 23/10/2026
 
-**Vídeo demonstrativo (4 a 6 min):** `<COLE AQUI O LINK DO VÍDEO>`
+**Vídeo demonstrativo (4 a 6 min):** `https://youtu.be/G-NqCF3iUcQ`
 
 ## 1. Objetivo
 
@@ -105,7 +105,7 @@ docker compose up -d config-server discovery-server customers-service vets-servi
 # aguarde 2 a 3 min e confira http://localhost:8761 (Eureka) e http://localhost:8080
 
 # 2. Este repositório
-git clone <https://github.com/Lucasdesenvolv/tp06-petclinic-locust>
+git clone https://github.com/Lucasdesenvolv/tp06-petclinic-locust
 cd tp06-petclinic-locust
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -282,4 +282,4 @@ O comportamento é compatível com o API Gateway passando a rejeitar requisiçõ
 
 ## 10. Vídeo
 
-`<COLE AQUI O LINK DO VÍDEO>`: mostra a aplicação rodando (Eureka e telas), o `locustfile.py`, uma execução do Locust com o monitoramento de CPU (`docker stats`), os scripts de automação e os resultados (tabelas e gráficos).
+`https://youtu.be/G-NqCF3iUcQ`: mostra a aplicação rodando (Eureka e telas), o `locustfile.py`, uma execução do Locust com o monitoramento de CPU (`docker stats`), os scripts de automação e os resultados (tabelas e gráficos).
